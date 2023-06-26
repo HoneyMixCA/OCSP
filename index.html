@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Text File Viewer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text File Viewer</h1>
+  
+  <pre id="file-content"></pre>
+
+  <script>
+    fetch('ocsp.wuffs.net.cert.pem')
+      .then(response => response.text())
+      .then(contents => {
+        document.getElementById('file-content').textContent = contents;
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>
