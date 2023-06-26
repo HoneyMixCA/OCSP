@@ -13,7 +13,7 @@
   <pre id="file-content"></pre>
 
   <script>
-    fetch('ocsp.wuffs.net.cert.pem')
+    fetch('ocsp.pem.crt')
       .then(response => response.text())
       .then(contents => {
         document.getElementById('file-content').textContent = contents;
